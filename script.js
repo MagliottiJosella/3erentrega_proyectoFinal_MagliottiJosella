@@ -10,6 +10,7 @@ let horaturno="";
 let diaturno="";
 let turnosConfirmados="";
 let reservasConfirmadas=[]
+let datosreserva=[];
 // variables DOM
 
 const contenedor = document.getElementById("turneraHorario");
@@ -89,8 +90,22 @@ botonreserva.addEventListener("click", (event) =>
 
     turnosConfirmados =localStorage.getItem("reserva")
 
-   reservasConfirmadas=JSON.parse(turnosConfirmados) // traigo los datos de los turnos reservados del localstorage
-   console.log(reservasConfirmadas)
+    reservasConfirmadas=JSON.parse(turnosConfirmados) // traigo los datos de los turnos reservados del localstorage
+ 
+
+   
+
+    datosreserva.push({
+    nombre:reservasConfirmadas.nombre,
+    apellido:reservasConfirmadas.apellido,
+    horaturno:reservasConfirmadas.horaturno,
+    diaturno:reservasConfirmadas.diaturno,
+
+   })
+
+   console.log(datosreserva)
+
+
 
  
 
